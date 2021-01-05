@@ -1,0 +1,187 @@
+*
+{
+    font-family: "Courier New", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.5;
+    background-color: rgb(218, 218, 218, 1);
+}
+
+body
+{
+    display: flex;
+}
+.outerWrapper
+{
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: block;
+    box-sizing: border-box;
+    max-width: 960px;
+}
+
+.innerWrapper
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.tableRoundedWrapper
+{
+    width: 100%;
+    padding-top: 3px;
+    padding-bottom:10px;
+    background-color: rgb(127, 127, 127);
+    border: solid rgb(127,127,127) 3px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 6px;
+    border-left: 2px;
+    border-right: 2px;
+    box-shadow: 0 2px 10px rgb(0, 0, 0, 0.7);
+}
+
+table, table>*
+{
+    position: relative;
+}
+
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr:last-child td:first-child
+{
+    border-bottom-left-radius: 10px;
+}
+
+
+.thLeft
+{
+    width: 180px;
+    text-align: left;
+    padding-left: 10px
+}
+
+.thRight
+{
+    width: auto;
+}
+
+.tableHead
+{
+    font-weight: 1000;
+    font-size: 18px;
+    padding: 10px 20px 10px 10px;
+    background-color: rgb(127,127,127);
+}
+
+.button, .sendQuery
+{
+    padding: 5px 15px 5px 15px;
+    font-size: 16px;
+    background-color: rgb(127,127,127);
+    border: solid rgb(127,127,127) 3px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgb(0, 0, 0, 0.7);
+}
+
+.button:hover, .button:active, .sendQuery:hover, .sendQuery:active
+{
+    background-color: rgb(107,107,107);
+    border: solid rgb(107,107,107) 3px;
+    cursor: pointer;
+}
+
+.topRow
+{
+    padding: 10px;
+}
+
+.trBotBord, .botQuery
+{
+    border-bottom: solid rgb(127,127,127) 2px;
+}
+
+.innerTR
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    display:inline-block;
+    position:relative;
+}
+
+input
+{
+    background-color: white;
+    padding-left: 10px;
+}
+
+.paramName
+{
+
+}
+
+.paramType
+{
+    font-style: italic;
+    font-size: 12px;
+}
+
+.output
+{
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    text-align: left;
+    display: block;
+    padding: 10px;
+}
+
+#carsOutput
+{
+    min-height: 300px;
+    width: 100%;
+}
+
+.carsRow
+{
+    display: none;
+}
+
+.carRow
+{
+    display: none;
+}
+
+.usersRow
+{
+    display: none;
+}
+
+.manufacturerRow
+{
+    display: none;
+}
+
+.carsAddRow
+{
+    display: none;
+}
+
+.invalidInput
+{
+    color: red;
+    font-style: italic;
+    display: none;
+}

@@ -1,0 +1,366 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CE29X - Challenge Week WebAPI</title>
+        <link rel="stylesheet" href="/css/myStyle.css">
+    </head>
+</html>
+<body>
+    <div class="outerWrapper">
+        <div class="innerWrapper">
+            <div class="tableRoundedWrapper">
+                <table class="topLevelTable">
+                    <thead>
+                        <tr>
+                            <th class="thLeft tableHead" colspan="2">
+                                WebAPI Endpoint by Ma18533
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--Cars URI Query-->
+                        <tr class="trBotBord">
+                            <th colspan="2">
+                                <div class="topRow">
+                                    <button class="button" id="displayCars">
+                                        SHOW
+                                    </button>
+                                    <span>
+                                        &#8203;/Cars
+                                    </span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr class="carsRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        year
+                                    </div>
+                                    <div class="paramType">
+                                        (int)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="carsInput" id="year" type="text" placeholder="year">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class="carsRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        priceFrom
+                                    </div>
+                                    <div class="paramType">
+                                        (double)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="carsInput" id="priceFrom" type="text" placeholder="priceFrom">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class="carsRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        priceTo
+                                    </div>
+                                    <div class="paramType">
+                                        (double)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="carsInput" id="priceTo" type="text" placeholder="priceTo">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class="carsRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        manufacturerID
+                                    </div>
+                                    <div class="paramType">
+                                        (int)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="carsInput"  id="manufacturerID" type="text" placeholder="manufacturerID">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class = "carsRow">
+                            <th colspan="2" style="padding:10px;">
+                                <button class="sendQuery" id="sendCars">
+                                    QUERY
+                                </button>
+                            </th>
+                        </tr>
+                        <tr class="carsRow botQuery">
+                            <th colspan="2" style="padding: 10px">
+                                <textarea class="output" id="carsOutput" readonly>> Output
+                                </textarea>
+                            </th>
+                        </tr>
+                        <!--Cars Insert URI Query-->
+                        <tr class="trBotBord">
+                            <th colspan="2">
+                                <div class="topRow">
+                                    <button class="button" id="addCar">
+                                        SHOW
+                                    </button>
+                                    <span>
+                                        &#8203;/Cars <font color="green"> --- Add car</font>
+                                    </span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr class="carsAddRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        manufacturerID
+                                    </div>
+                                    <div class="paramType">
+                                        (int)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="carsAddInput" id="manufacturerID2" type="text" placeholder="manufacturerID">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class="carsAddRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        model
+                                    </div>
+                                    <div class="paramType">
+                                        (String)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="carsAddInput" id="model" type="text" placeholder="model">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class="carsAddRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        bodyType
+                                    </div>
+                                    <div class="paramType">
+                                        (String)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="carsAddInput" id="body" type="text" placeholder="bodyType">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class="carsAddRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        year
+                                    </div>
+                                    <div class="paramType">
+                                        (int)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="carsAddInput"  id="year3" type="text" placeholder="year">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class="carsAddRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        retailPrice
+                                    </div>
+                                    <div class="paramType">
+                                        (double)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="carsAddInput"  id="retailPrice" type="text" placeholder="retailPrice">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class = "carsAddRow">
+                            <th colspan="2" style="padding:10px;">
+                                <button class="sendQuery" id="sendCarsAdd">
+                                    QUERY
+                                </button>
+                            </th>
+                        </tr>
+                        <tr class="carsAddRow botQuery">
+                            <th colspan="2" style="padding: 10px">
+                                <textarea class="output" id="carsAddOutput" readonly>> Output
+                                </textarea>
+                            </th>
+                        </tr>
+                        <!-- Car URI -->
+                        <tr class="trBotBord">
+                            <th colspan="2">
+                                <div class="topRow">
+                                    <button class="button" id="displayCar">
+                                        SHOW
+                                    </button>
+                                    <span>
+                                            &#8203;/Car
+                                        </span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr class="carRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        modelID
+                                    </div>
+                                    <div class="paramType">
+                                        (int)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="carInput" id="modelID" type="text" placeholder="modelID">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class = "carRow">
+                            <th colspan="2" style="padding:10px;">
+                                <button class="sendQuery" id="sendCar">
+                                    QUERY
+                                </button>
+                            </th>
+                        </tr>
+                        <tr class="carRow botQuery">
+                            <th colspan="2" style="padding: 10px">
+                                    <textarea class="output" id="carOutput" readonly>> Output
+                                    </textarea>
+                            </th>
+                        </tr>
+                        <!-- Users URI -->
+                        <tr class="trBotBord">
+                            <th colspan="2">
+                                <div class="topRow">
+                                    <button class="button" id="displayUsers">
+                                        SHOW
+                                    </button>
+                                    <span>
+                                        &#8203;/Users
+                                    </span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr class="usersRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        carCount
+                                    </div>
+                                    <div class="paramType">
+                                        (int)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="userInput" id="carCount" type="text" placeholder="carCount">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class = "usersRow">
+                            <th colspan="2" style="padding:10px;">
+                                <button class="sendQuery" id="sendUsers">
+                                    QUERY
+                                </button>
+                            </th>
+                        </tr>
+                        <tr class="usersRow botQuery">
+                            <th colspan="2" style="padding: 10px">
+                                <textarea class="output" id="usersOutput" readonly>> Output
+                                </textarea>
+                            </th>
+                        </tr>
+                        <!-- Manufacturer URI -->
+                        <tr class="trBotBord">
+                            <th colspan="2">
+                                <div class="topRow">
+                                    <button class="button" id="displayManufacturers">
+                                        SHOW
+                                    </button>
+                                    <span>
+                                        &#8203;/Manufacturers
+                                    </span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr class="manufacturerRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        name
+                                    </div>
+                                    <div class="paramType">
+                                        (String)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="manufacturerInput" id="manufacturerName" type="text" placeholder="name">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class="manufacturerRow">
+                            <th class="thLeft">
+                                <div class="innerTR">
+                                    <div class="paramName">
+                                        year
+                                    </div>
+                                    <div class="paramType">
+                                        (int)
+                                    </div>
+                                </div>
+                            </th>
+                            <th class="thRight">
+                                <input class="manufacturerInput" id="year2" type="text" placeholder="year">
+                                <span class="invalidInput">*invalid input </span>
+                            </th>
+                        </tr>
+                        <tr class = "manufacturerRow">
+                            <th colspan="2" style="padding:10px;">
+                                <button class="sendQuery" id="sendManufacturers">
+                                    QUERY
+                                </button>
+                            </th>
+                        </tr>
+                        <tr class="manufacturerRow botQuery">
+                            <th colspan="2" style="padding: 10px">
+                                <textarea class="output" id="manufacturersOutput" readonly>> Output
+                                </textarea>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/js/webAPI.js"></script>
+</body>
