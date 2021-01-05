@@ -1,0 +1,56 @@
+# creates db
+DROP DATABASE IF EXISTS CarCollection;
+CREATE DATABASE CarCollection;
+USE CarCollection;
+
+# creates tables
+CREATE TABLE manufacturers (
+	ManufacturerID INT NOT NULL AUTO_INCREMENT,
+	Name CHAR(20) NOT NULL,
+	Country CHAR(30) NOT NULL,
+	PRIMARY KEY(ManufacturerID),
+	UNIQUE KEY manufacturer (Name, Country)
+);
+
+
+CREATE TABLE cars (
+	ModelID INT NOT NULL AUTO_INCREMENT,
+	ManufacturerID INT NOT NULL,
+	Model CHAR(20) NOT NULL,
+	BodyType CHAR(20) NOT NULL,
+	Year INT NOT NULL,
+	RetailPrice DECIMAL(8, 2) NOT NULL,
+	PRIMARY KEY (ManufacturerID, Model, Year),
+	FOREIGN KEY (ManufacturerID) REFERENCES manufacturers(ManufacturerID),
+	KEY (ModelID)
+);
+
+CREATE TABLE owners (
+	OwnerID INT NOT NULL AUTO_INCREMENT,
+	FullName CHAR(50) NOT NULL,
+	PostCode CHAR(8) NOT NULL,
+	PRIMARY KEY (OwnerID),
+	UNIQUE KEY owner (FullName, PostCode),
+	KEY (OwnerID)
+);
+
+CREATE TABLE cars_owned (
+	OwnerID INT NOT NULL AUTO_INCREMENT,
+	PlateNo CHAR(9) NOT NULL,
+	ManufacturerID INT NOT NULL,
+	Model Char(20) NOT NULL,
+	Year INT NOT NULL,
+	Purchase DECIMAL(8, 2),
+	PRIMARY KEY(PlateNo),
+	FOREIGN KEY (ManufacturerID, Model, Year) REFERENCES cars (ManufacturerID, Model, Year),
+	KEY (OwnerID) 
+);
+
+# inserts arbritary data
+INSERT INTO manufacturers (Name, Country) VALUES ('Audi', 'Germany'), ('Volkswagen', 'Germany'), ('Honda', 'Japan'), ('Hyundai', 'South Korean'), ('Ford', 'US'), ('Mini', 'UK'), ('Bentley', 'UK');
+
+INSERT INTO cars (ManufacturerID, Model, BodyType, Year, RetailPrice) VALUES (1, 'A4', 'Hatchback', 2002, 32900), (1, 'A4', 'HatchBack', 2010, 29865.00), (1, 'TT', 'Sports', 2014, 45495.50), (1, 'RS3', 'Saloon', 2019, 46509.00), (1, 'Q7', 'SUV', 2016, 52670.95), (2, 'Polo', 'Hatchback', 2012, 18500), (2, 'Golf', 'Hatchback', 2015, 21495), (2, 'Passat', 'Saloon', 2019, 29995), (3, 'Civic', 'Hatchback', 2007, 34950), (3, 'Accord', 'Coupe', 2019, 42500), (3, 'Jazz', 'Hatchback', 2016, 15000.18), (4, 'i800', 'Minivan', 1999, 17000), (4, 'i40', 'Saloon', 2002, 27000), (5, 'Focus', 'Hatchback', 2016, 26000), (5, 'Fiesta', 'Hatchback', 2007, 24950), (6, 'Cooper', 'Hatchback', 2019, 32750), (7, 'Mulsane', 'Sports', 2019, 310995.1956);
+
+INSERT INTO owners (FullName, PostCode) VALUES ('Ulrich Nielson', 'SW10 4QE'), ('Arya Stalk', 'WH01 0HS'), ('Geralt Of Rivia', 'RV00 4JG'), ('Margret Thatcher', 'HG06 0BB'), ('Pluto Frightens', 'WOO OFF');
+
+INSERT INTO cars_owned (OwnerID, PlateNo, ManufacturerID, Model, Year, Purchase) VALUES (1, 'RF69 ZRB', 1, 'RS3', 2019, 41250.00), (2, 'JG52 0HY', 2, 'Polo', 2012, 14000.00), (2, 'HTN WIC', 1, 'TT', 2014, 29455.00), (2, 'UPT SOUT', 3, 'Civic', 2007, 3499.00), (3, 'JD22 ZPB', 5, 'Focus', 2016, 20000.00), (3, 'lW45 JDH', 3, 'Civic', 2007, 2995.00), (3, 'TAC TUW', 7, 'Mulsane', 2019, 299750.00), (4, 'WR00 FCKD', 4, 'i800', 1999, 10000.00), (5, 'W00 FFF', 6, 'Cooper', 2019, 30000.00);
